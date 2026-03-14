@@ -3,41 +3,89 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>高星教育开源项目 | 学习路径与资源导航</title>
-    <meta name="description" content="轻量中文教育资源整合型开源项目：学习路径、资源筛选、贡献协作。" />
+    <title>高星教育开源项目 | 30 分钟找到下一步学习路径</title>
+    <meta
+      name="description"
+      content="面向中文学习者的轻量开源学习导航：结构化学习路径、可筛选资源库、公开维护节奏与质量保障。"
+    />
     <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
     <header class="hero">
-      <h1>高星教育开源项目</h1>
-      <p>面向中文学习者的轻量教程与资源整合平台</p>
+      <div class="hero-inner">
+        <p class="eyebrow">Open Source Learning Navigator</p>
+        <h1>高星教育开源项目</h1>
+        <p class="hero-subtitle">30 分钟确定方向，7 天进入稳定学习节奏。</p>
+        <p class="hero-description">
+          这是一个面向中文学习者的开源学习路径导航项目。我们把零散教程整理为“路径 + 资源 + 筛选”三层结构，帮助你减少搜索成本，专注持续进步。
+        </p>
+        <div class="hero-actions">
+          <a href="#path-section">立即查看学习路径</a>
+          <a href="./README.md">阅读项目说明</a>
+        </div>
+        <ul class="hero-metrics">
+          <li><strong>3 条</strong>已整理学习路径</li>
+          <li><strong>6 个</strong>高价值资源入口</li>
+          <li><strong>双重校验</strong>Schema + 外链可达性</li>
+        </ul>
+      </div>
     </header>
 
     <main class="container">
-      <section class="filters" aria-label="资源筛选">
-        <label>
-          方向
-          <select id="directionFilter"></select>
-        </label>
-        <label>
-          难度
-          <select id="difficultyFilter"></select>
-        </label>
-        <label>
-          标签
-          <select id="tagFilter"></select>
-        </label>
-        <button id="resetFilters" type="button">重置</button>
+      <section class="trust-panel" aria-label="项目可信度">
+        <article>
+          <h2>为谁而做</h2>
+          <p>给希望低成本开始学习、但不想在信息噪声里反复试错的中文学习者。</p>
+        </article>
+        <article>
+          <h2>维护节奏</h2>
+          <p>每周增补资源并校验链接可达；关键发布节点会更新变更日志。</p>
+        </article>
+        <article>
+          <h2>质量保障</h2>
+          <p>`npm test` 校验数据结构与筛选逻辑，`npm run check:links` 校验外链可达性。</p>
+        </article>
       </section>
 
-      <section>
+      <section class="filters-wrap">
+        <h2>按你的目标筛选资源</h2>
+        <p>从方向、难度、标签三个维度快速缩小范围，避免“收藏很多、行动很少”。</p>
+        <div class="filters" aria-label="资源筛选">
+          <label>
+            方向
+            <select id="directionFilter"></select>
+          </label>
+          <label>
+            难度
+            <select id="difficultyFilter"></select>
+          </label>
+          <label>
+            标签
+            <select id="tagFilter"></select>
+          </label>
+          <button id="resetFilters" type="button">重置</button>
+        </div>
+      </section>
+
+      <section id="path-section">
         <h2>学习路径</h2>
+        <p class="section-intro">从“前端/后端/算法与求职”三个方向起步，每条路径都给出建议难度与标签。</p>
         <div id="pathList" class="path-grid"></div>
       </section>
 
       <section>
         <h2>资源详情</h2>
+        <p class="section-intro">结合上方筛选器，优先执行一条路径中的 1-2 个资源，形成可持续节奏。</p>
         <div id="resourceList" class="resource-list"></div>
+      </section>
+
+      <section class="next-step">
+        <h2>下一步怎么用这个项目</h2>
+        <ol>
+          <li>先看学习路径，确定你当前阶段。</li>
+          <li>使用筛选器选出 1 个方向 + 1 个难度。</li>
+          <li>每周完成 2-3 个资源学习并回顾。</li>
+        </ol>
       </section>
     </main>
 

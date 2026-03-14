@@ -1,11 +1,14 @@
 :root {
   color-scheme: light;
-  --bg: #f8fafc;
+  --bg: #f4f8fb;
   --panel: #ffffff;
-  --text: #0f172a;
-  --muted: #475569;
-  --line: #cbd5e1;
+  --text: #111827;
+  --muted: #4b5563;
+  --line: #d6deea;
   --brand: #0f766e;
+  --brand-strong: #065f56;
+  --accent: #f59e0b;
+  --shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
 }
 
 * {
@@ -15,29 +18,133 @@
 body {
   margin: 0;
   font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-  background: linear-gradient(180deg, #e2e8f0 0%, var(--bg) 20%);
+  background:
+    radial-gradient(circle at 10% 0%, #d7f4ef 0%, transparent 36%),
+    radial-gradient(circle at 95% 5%, #ffe8bf 0%, transparent 22%),
+    linear-gradient(180deg, #edf3f8 0%, var(--bg) 28%);
   color: var(--text);
+  line-height: 1.6;
 }
 
 .hero {
-  padding: 2rem 1rem;
-  text-align: center;
+  padding: 2rem 1rem 1rem;
+}
+
+.hero-inner {
+  max-width: 980px;
+  margin: 0 auto;
+  background: linear-gradient(140deg, #07332e 0%, #0f766e 68%, #129084 100%);
+  color: #f8fffe;
+  border-radius: 18px;
+  padding: 2rem 1.4rem;
+  box-shadow: var(--shadow);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.76rem;
+  margin: 0 0 0.4rem;
+  color: #bef5eb;
 }
 
 .hero h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 2.05rem;
 }
 
-.hero p {
-  margin-top: 0.5rem;
-  color: var(--muted);
+.hero-subtitle {
+  margin: 0.4rem 0 0;
+  font-size: 1.1rem;
+  color: #dcfce7;
+}
+
+.hero-description {
+  margin: 0.8rem 0 0;
+  max-width: 760px;
+  color: #e5fffa;
+}
+
+.hero-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.hero-actions a {
+  text-decoration: none;
+  border-radius: 999px;
+  font-weight: 700;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  color: #ecfeff;
+}
+
+.hero-actions a:first-child {
+  background: #facc15;
+  color: #1f2937;
+  border-color: #facc15;
+}
+
+.hero-metrics {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.hero-metrics li {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 10px;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.92rem;
 }
 
 .container {
   max-width: 980px;
   margin: 0 auto;
-  padding: 0 1rem 2rem;
+  padding: 0 1rem 2.1rem;
+}
+
+.trust-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.trust-panel article {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.95rem;
+}
+
+.trust-panel h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.trust-panel p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.filters-wrap {
+  margin-bottom: 1.1rem;
+}
+
+.filters-wrap h2 {
+  margin-bottom: 0.2rem;
+}
+
+.filters-wrap p {
+  margin-top: 0;
+  color: var(--muted);
 }
 
 .filters {
@@ -48,7 +155,7 @@ body {
   border: 1px solid var(--line);
   border-radius: 12px;
   padding: 1rem;
-  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
 }
 
 label {
@@ -73,6 +180,16 @@ button {
   color: #fff;
   border: none;
   cursor: pointer;
+  font-weight: 700;
+}
+
+button:hover {
+  background: var(--brand-strong);
+}
+
+.section-intro {
+  margin-top: -0.3rem;
+  color: var(--muted);
 }
 
 .path-grid {
@@ -85,7 +202,8 @@ button {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 12px;
-  padding: 0.9rem;
+  padding: 1rem;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
 }
 
 .card h3 {
@@ -106,8 +224,8 @@ button {
 }
 
 .tag {
-  background: #ccfbf1;
-  color: #134e4a;
+  background: #dff9f5;
+  color: #0f4c46;
   padding: 0.15rem 0.4rem;
   border-radius: 999px;
   font-size: 0.75rem;
@@ -122,9 +240,25 @@ button {
   color: var(--muted);
 }
 
+.next-step {
+  margin-top: 1.2rem;
+  background: #fff7e8;
+  border: 1px solid #f8d598;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+}
+
+.next-step h2 {
+  margin: 0;
+}
+
+.next-step ol {
+  margin-bottom: 0;
+}
+
 .footer {
   text-align: center;
-  padding: 1.5rem 0 2rem;
+  padding: 1.8rem 0 2rem;
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -132,5 +266,31 @@ button {
 }
 
 .footer a {
-  color: #0b5ed7;
+  color: #1357c2;
+}
+
+@media (max-width: 760px) {
+  .hero-inner {
+    padding: 1.45rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.7rem;
+  }
+
+  .hero-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    grid-template-columns: 1fr;
+  }
+
+  button {
+    align-self: stretch;
+  }
 }
