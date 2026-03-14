@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>高星教育开源项目 | 学习路径与资源导航</title>
+    <meta name="description" content="轻量中文教育资源整合型开源项目：学习路径、资源筛选、贡献协作。" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <h1>高星教育开源项目</h1>
+      <p>面向中文学习者的轻量教程与资源整合平台</p>
+    </header>
+
+    <main class="container">
+      <section class="filters" aria-label="资源筛选">
+        <label>
+          方向
+          <select id="directionFilter"></select>
+        </label>
+        <label>
+          难度
+          <select id="difficultyFilter"></select>
+        </label>
+        <label>
+          标签
+          <select id="tagFilter"></select>
+        </label>
+        <button id="resetFilters" type="button">重置</button>
+      </section>
+
+      <section>
+        <h2>学习路径</h2>
+        <div id="pathList" class="path-grid"></div>
+      </section>
+
+      <section>
+        <h2>资源详情</h2>
+        <div id="resourceList" class="resource-list"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <a href="./README.md">README</a>
+      <a href="./docs/deployment.md">部署说明</a>
+      <a href="./CONTRIBUTING.md">贡献指南</a>
+      <a href="./CHANGELOG.md">更新日志</a>
+    </footer>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
