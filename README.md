@@ -2,6 +2,8 @@
 
 轻量中文教育资源整合型开源项目，提供学习路径与资源导航能力，支持方向/难度/标签筛选。
 
+线上访问（GitHub Pages）：<https://ppchanning.github.io/highstar-edu-oss/>
+
 ## 项目定位
 
 - 面向用户：希望快速建立学习路线的中文学习者
@@ -22,6 +24,12 @@ npm run start
 ```
 
 启动后访问：`http://localhost:4173`
+
+## 线上部署
+
+- 自动部署：推送到 `main` 分支触发 `.github/workflows/pages.yml`
+- 手动重部署：GitHub Actions -> `Deploy GitHub Pages` -> `Run workflow`
+- 线上地址：<https://ppchanning.github.io/highstar-edu-oss/>
 
 ## 测试与质量验证
 
